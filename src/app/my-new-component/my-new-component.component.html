@@ -8,17 +8,26 @@
                 <p style="margin: -12px;">Disponibile nuovo</p></div>
             <div style="color:#ff7b00" *ngIf="pc.availabilty == 1" class="disponibile"><mat-icon >warning</mat-icon>
                 <p style="margin: -12px;">Solo esposto</p></div>
-            <span class="info">
+            <div class="info">
                 <mat-icon >memory</mat-icon><p class="singleTitle">{{pc.cpu}}</p>
                 <mat-icon >pages</mat-icon><p class="singleTitle">{{pc.ram}}gb</p>
                 <mat-icon >sd_card</mat-icon><p class="singleTitle">{{pc.ssd}}gb</p>
                 <mat-icon >widgets</mat-icon><p class="singleTitle">{{pc.gpu}}</p>
-            </span>
+            </div>
 
-            <mat-progress-bar style="width: 150px;height: 10px;color: red;" mode="determinate" [value]="getValue(i)[0]*4"></mat-progress-bar>
-            <div class="price"><span>{{pc.price}} € </span></div>
+            <div class="price"><span style="text-align: center;">{{pc.price}} € </span></div>
         </div>
+        <div class="rightSide">
+            <div class="rankingContainer">
 
+            </div>
+            <div class="rankingContainer">
+
+            </div>
+            <div class="rankingContainer">
+
+            </div>
+        </div>
     </div>
 </div>
 </div>
