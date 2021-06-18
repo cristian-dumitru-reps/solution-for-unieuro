@@ -1,0 +1,24 @@
+<div class="container">
+    <img class="img animated" src="assets/analyse.svg">
+    <div class="description">
+          <form class="example-form animated">
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Computer</mat-label>
+              <input type="text"
+                     placeholder="Scegli un computer"
+                     aria-label="Computer"
+                     matInput
+                     [formControl]="myControl"
+                     [matAutocomplete]="auto">
+              <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </form>
+    </div>
+    <div *ngIf="myControl.value">
+        <app-card-component [cmp]="computerList[sceltaComputer]"></app-card-component>
+    </div>
+</div>

@@ -1,0 +1,119 @@
+<div class="container">
+<div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <div class="leftSide centerAligned">
+            <span class="title">{{computer.model}} {{computer.name}} </span>
+            <img [style.box-shadow]="computer.availabilty > 1 ? '0px 0px 15px #16FC1E':'0px 0px 15px #ff7b00'"[style.border]="computer.availabilty > 1 ? '1px solid #16FC1E':'1px solid #ff7b00'" class="image" [src]="computer.image">
+            <div style="color:#16FC1E" *ngIf="computer.availabilty > 1" class="disponibile"><mat-icon style="color:#16FC1E">verified_user</mat-icon>
+                <p style="margin: -10px;">Disponibile nuovo</p></div>
+            <div style="color:#ff7b00" *ngIf="computer.availabilty == 1" class="disponibile"><mat-icon style="color:#ff7b00">warning</mat-icon>
+                <p style="margin: -10px;">Disponibile solo esposto</p></div>
+
+
+            <div class="price"><span>{{computer.price}} € </span></div>
+        </div>
+        <div class="rightSide">
+            <div class="info ">
+                <p class="singleTitle"><mat-icon >dvr</mat-icon><span class="tag-item">Sistema operativo:</span > Windows 10 Home</p>
+                <p class="singleTitle"><mat-icon >memory</mat-icon><span class="tag-item">Processore:</span> {{computer.cpu}}</p>
+                <p class="singleTitle"><mat-icon >present_to_all</mat-icon><span class="tag-item">Dimensione schermo:</span> 15.6"</p>
+                <p class="singleTitle"><mat-icon >video_label</mat-icon><span class="tag-item">Risoluzione:</span> 1920x1080 pixel</p>
+                <p class="singleTitle"><mat-icon >pages</mat-icon><span class="tag-item">Memoria ram:</span> {{computer.ram}}gb</p>
+               <p class="singleTitle"> <mat-icon >sd_card</mat-icon><span class="tag-item">Memoria interna:</span> {{computer.ssd}}gb</p>
+                <p class="singleTitle"><mat-icon >widgets</mat-icon><span class="tag-item">Scheda video dedicata:</span> {{computer.gpu}}</p>
+
+            </div>
+        </div>
+      </div>
+      <div class="flip-card-back">
+        <div style ="justify-content: center;"class="leftSide">
+            <div class="rankingContainer tooltip">
+                <span class="tooltiptext">
+                    <span style="margin-left:4px;font-weight: 600;">Esempi di uttilizzo</span><br>
+                    <div class="tags">
+                        <span class="circle-tag centerAligned"></span>Navigazione Web
+                        <span class="circle-tag centerAligned"></span>YouTube
+                        <span class="circle-tag centerAligned"></span>Email
+                        <span class="circle-tag centerAligned"></span>Netflix
+                        <span class="circle-tag centerAligned"></span>Office
+
+                    </div>
+                    <div class="tags">
+                        <span class="circle-tag centerAligned"></span>Documenti
+                        <span class="circle-tag centerAligned"></span>Multimedia
+                        <span class="circle-tag centerAligned"></span>Email
+                        <span class="circle-tag centerAligned"></span>Altro
+                        <span class="circle-tag centerAligned"></span>Altro
+
+                    </div>
+                </span>
+                <p class="rankingTitle">Uso normale</p>
+                <div class="rankingLine">
+                    <div [style.width.px]="getPercentagePixel(getValue()[0],6,'normal')" [ngStyle]="{'background-image': getGradient(getPercentagePixel(getValue()[0],6,'normal'))}" class="rankingLineInside">
+                    <p class="percentuale">{{getPercentage(getValue()[0],6,'normal')| number:'1.1-1'}}% </p>
+                    </div>
+                </div>
+            </div>
+            <div class="rankingContainer tooltip">
+                <span class="tooltiptext">
+                    <span style="margin-left:4px;font-weight: 600;">Esempi di uttilizzo</span><br>
+                    <div class="tags">
+                        <span class="circle-tag centerAligned"></span>Photoshop
+                        <span class="circle-tag centerAligned"></span>Illustrator
+                        <span class="circle-tag centerAligned"></span>Software musicali
+                        <span class="circle-tag centerAligned"></span>Programmazione
+
+                    </div>
+                    <div class="tags">
+                        <span class="circle-tag centerAligned"></span>Editing leggero
+                        <span class="circle-tag centerAligned"></span>Gaming leggero
+                        <span class="circle-tag centerAligned"></span>Email
+                        <span class="circle-tag centerAligned"></span>Altro
+                        <span class="circle-tag centerAligned"></span>Altro
+
+                    </div>
+                </span>
+                <p class="rankingTitle">Uso scolastico/ufficio </p>
+                <div class="rankingLine">
+                    <div [style.width.px]="getPercentagePixel(getValue()[0],13,'medium')" [ngStyle]="{'background-image': getGradient(getPercentagePixel(getValue()[0],13,'medium'))}" class="rankingLineInside">
+                    <p class="percentuale">{{getPercentage(getValue()[0],13,'medium')| number:'1.1-1'}}% </p>
+                    </div>
+                </div>
+            </div>
+            <div class="rankingContainer tooltip">
+                <span class="tooltiptext">
+                    <span style="margin-left:4px;font-weight: 600;">Esempi di uttilizzo</span><br>
+                    <div class="tags">
+                        <span class="circle-tag centerAligned"></span>Modellazione 3D
+                        <span class="circle-tag centerAligned"></span>Gaming
+                        <span class="circle-tag centerAligned"></span>Autocad
+                        <span class="circle-tag centerAligned"></span>Netflix
+                        <span class="circle-tag centerAligned"></span>Office
+
+                    </div>
+                    <div class="tags">
+                        <span class="circle-tag centerAligned"></span>Video Editing
+                        <span class="circle-tag centerAligned"></span>Multimedia
+                        <span class="circle-tag centerAligned"></span>Email
+                        <span class="circle-tag centerAligned"></span>Altro
+                        <span class="circle-tag centerAligned"></span>Altro
+
+                    </div>
+                </span>
+                <p class="rankingTitle">Uso grafica avanzata</p>
+                <div class="rankingLine">
+                    <div [style.width.px]="getPercentagePixel(getValue()[0],17,'high',getValue()[1])" [ngStyle]="{'background-image': getGradient(getPercentagePixel(getValue()[0],17,'high',getValue()[1]))}" class="rankingLineInside">
+                    <p class="percentuale">{{getPercentage(getValue()[0],17,'high',getValue()[1])| number:'1.1-1'}}% </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rightSide">
+            <span>Guarda come dondolo guarda come dondolo</span>
+            <button (click)="getPdf(computer.id)" class="button-spec centerAligned">Scheda tecnica</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

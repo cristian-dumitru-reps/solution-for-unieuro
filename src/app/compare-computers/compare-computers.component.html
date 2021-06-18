@@ -1,0 +1,45 @@
+<div class="container">
+    <form class="example-form animated">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Nome primo computer</mat-label>
+          <input type="text"
+                 placeholder="Scegli un computer"
+                 aria-label="Computer"
+                 matInput
+                 [formControl]="primoComputer"
+                 [matAutocomplete]="auto">
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+    <img class="img animated" src="assets/compare.svg">
+    <form class="example-form animated">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Nome secondo computer</mat-label>
+          <input type="text"
+                 placeholder="Scegli un computer"
+                 aria-label="Computer"
+                 matInput
+                 [formControl]="primoComputer"
+                 [matAutocomplete]="auto">
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredSecondOptions | async" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+    <!-- <div class="description">
+        <p class="big-title animated">Scegliamo il Punto Vendita</p>
+        <p class="mid-title animated">Il vantaggio di essere un robot carino e simpatico? Posso chiedere gentilmente ad ogni punto vendita le sue disponibilità.</p>
+        <p class="mid-title animated">Certo che condividerò con te queste informazioni, ti chiedo gentilmente di scegliere il tuo punto vendita:</p>
+
+        
+      </div> -->
+    </div>
+<div class="external-container">
+    <button  class="button-spec animated">Confronta</button>
+</div>

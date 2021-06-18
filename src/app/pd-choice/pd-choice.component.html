@@ -1,0 +1,26 @@
+<div class="container">
+    <img class="img animated" src="assets/pd.svg">
+    <div class="description">
+        <p class="big-title animated">Scegliamo il Punto Vendita</p>
+        <p class="mid-title animated">Il vantaggio di essere un robot carino e simpatico? Posso chiedere gentilmente ad ogni punto vendita le sue disponibilità.</p>
+        <p class="mid-title animated">Certo che condividerò con te queste informazioni, ti chiedo gentilmente di scegliere il tuo punto vendita:</p>
+          <form class="example-form animated">
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Punto Vendita</mat-label>
+              <input type="text"
+                     placeholder="Scegli un Punto Vendita"
+                     aria-label="Punto Vendita"
+                     matInput
+                     [formControl]="myControl"
+                     [matAutocomplete]="auto">
+              <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </form>
+        <a routerLink="/scelta/:{{myControl.value}}"><button  [disabled]="!myControl.value" class="button-spec animated">Proseguiamo</button></a>
+
+    </div>
+</div>
