@@ -28,6 +28,8 @@ export class CompareComputersComponent implements OnInit {
   ]
   
   options: string[] = ['Aspire XD14E','Asus CA41B','Acer F314X','Lenovo XD14E'];
+  firstComputer = -1;
+  secondComputer = -1;
   filteredOptions: Observable<string[]> | undefined;
   filteredSecondOptions: Observable<string[]> | undefined;
   
@@ -36,14 +38,21 @@ export class CompareComputersComponent implements OnInit {
       startWith(''),
       map(value => this._filter(value))
     );
-    this.filteredSecondOptions = this.secondoComputer.valueChanges.pipe(
-      startWith(''),
-      map(value => this._filter(value))
+    this.filteredSecondOptions = this.secondoComputer.valueChanges.pipe(startWith(''),
+      map(value => this._secondFilter(value))
     );
     // console.log(this.primoComputer.value);
   }
 
   private _filter(value: string): string[] {
+    this.firstComputer= this.options.indexOf(value);
+    const filterValue = value.toLowerCase();
+
+    return this.options.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
+  }
+
+  private _secondFilter(value: string): string[] {
+    this.secondComputer= this.options.indexOf(value);
     const filterValue = value.toLowerCase();
 
     return this.options.filter(option => option.toLowerCase().indexOf(filterValue) === 0);

@@ -149,9 +149,9 @@ export class CardComponent implements OnInit {
       percentuale = ((number_one / number_two) * 100) / 2;
       if (video) percentuale = percentuale + (video / 15) * 100;
     }
-    let percentualepx = (percentuale * 270) / 100;
-    if (percentualepx > 270) {
-      percentualepx = 270;
+    let percentualepx = (percentuale * 210) / 100;
+    if (percentualepx > 210) {
+      percentualepx = 210;
     }
     return percentualepx;
   }

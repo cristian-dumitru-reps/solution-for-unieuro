@@ -7,8 +7,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 330px;
-  width: 350px;
+  height: 230px;
+  width: 250px;
   border-radius: 5px 0px 0px 5px;
   background-color: #2f4572;
   background-image: linear-gradient(315deg, #2f4572 0%, #5faede 74%);
@@ -17,15 +17,15 @@
   display: flex;
   flex-direction: column;
   // justify-content: center;
-  height: 330px;
-  width: 450px;
+  height: 230px;
+  width: 300px;
   border-radius: 0px 5px 5px 0px;
   background-color: #ffffff;
 }
 .flip-card {
   background-color: transparent;
-  height: 330px;
-  width: 800px;
+  height: 230px;
+  width: 500px;
   perspective: 1000px;
   margin: 20px;
   border-radius: 5px;
@@ -41,26 +41,26 @@
   text-align: center;
   color: white;
   padding-left: 5px;
-  font-size: 20px;
+  font-size: 18px;
 }
 .image {
   object-fit: cover;
-  width: 150px;
-  height: 100px;
-  margin-top: 30px;
+  width: 100px;
+  height: 80px;
+  margin-top: 15px;
   border-radius: 2px;
   height: 30%;
 }
 .disponibile {
-  margin-top: 25px;
+  margin-top: 12px;
   font-size: 12px;
   text-align: center;
 }
 .info {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-left: 20px;
   color: rgb(0, 0, 0);
-  font-size: 18px;
+  font-size: 13px;
   display: flex;
   flex-direction: column;
 }
@@ -70,6 +70,7 @@
 .singleTitle {
   margin-left: -5px;
   margin-right: 7px;
+  margin-bottom:8px;
   top: 50%;
   width: 360px;
 }
@@ -83,7 +84,7 @@
   justify-content: center;
   align-items: center;
   align-content: center;
-  margin-top: 40px;
+  margin-top: 18px;
   width: 90px;
   height: 35px;
   background-color: white;
@@ -95,7 +96,7 @@
 .rankingContainer {
   display: flex;
   flex-direction: column;
-  width: 290px;
+  width: 220px;
   height: 80px;
   margin: 10px;
   background-color: white;
@@ -104,7 +105,7 @@
 }
 
 .rankingLine {
-  width: 270px;
+  width: 210px;
   margin: 7px;
   margin-top: 5px;
   height: 8px;
@@ -120,10 +121,12 @@
 .rankingTitle {
   margin-left: 10px;
   padding-top: 2px;
-  color: #731963;
+  color: #0c000a;
 }
 .percentuale {
-  padding-top: 10px;
+  padding-top: 6px;
+  padding-bottom: 5px;
+  font-size:11px;
   text-align: right;
   color: black;
 }
@@ -194,11 +197,11 @@
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 290px;
-  height: 76px;
+  width: 220px;
+  height: 56px;
   background-color: #fff;
   font-size: 9px;
-  padding: 2px 0;
+  // padding: 2px 0;
   border-radius: 6px;
   box-shadow: 0px 0px 6px #787c7c8a;
   position: absolute;

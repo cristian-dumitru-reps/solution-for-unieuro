@@ -1,0 +1,13 @@
+.filter{
+width: 130px;
+height: 70px;
+cursor:pointer;
+background-color: rgb(255, 255, 255);
+border-radius:10px;
+border:1px solid;
+}
+
+.filter:focus{
+background-color: red;
+color:white;
+}
