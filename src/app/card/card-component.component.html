@@ -1,7 +1,8 @@
-<div class="container">
 <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
+    <div class="flip-card-inner animated">
+        <!-- <span class="flip-text">Statistiche</span> -->
+        <div (click)="extendMouseClick()" (mouseenter) ="extendMouseEnter('entro')" (mouseleave) ="extendMouseEnter('esco')" class="extend"><mat-icon class="extend-icon" >keyboard_arrow_right</mat-icon></div>
+      <div *ngIf="cardFace == 1" class="flip-card-front animated">
         <div class="leftSide centerAligned">
             <span class="title">{{computer.model}} {{computer.name}} </span>
             <img [style.box-shadow]="computer.availabilty > 1 ? '0px 0px 15px #16FC1E':'0px 0px 15px #ff7b00'"[style.border]="computer.availabilty > 1 ? '1px solid #16FC1E':'1px solid #ff7b00'" class="image" [src]="computer.image">
@@ -15,18 +16,18 @@
         </div>
         <div class="rightSide">
             <div class="info ">
-                <p class="singleTitle"><mat-icon >dvr</mat-icon><span class="tag-item">Sistema operativo:</span > Windows 10 Home</p>
-                <p class="singleTitle"><mat-icon >memory</mat-icon><span class="tag-item">Processore:</span> {{computer.cpu}}</p>
-                <p class="singleTitle"><mat-icon >present_to_all</mat-icon><span class="tag-item">Dimensione schermo:</span> 15.6"</p>
-                <p class="singleTitle"><mat-icon >video_label</mat-icon><span class="tag-item">Risoluzione:</span> 1920x1080 pixel</p>
-                <p class="singleTitle"><mat-icon >pages</mat-icon><span class="tag-item">Memoria ram:</span> {{computer.ram}}gb</p>
-               <p class="singleTitle"> <mat-icon >sd_card</mat-icon><span class="tag-item">Memoria interna:</span> {{computer.ssd}}gb</p>
-                <p class="singleTitle"><mat-icon >widgets</mat-icon><span class="tag-item">Scheda video dedicata:</span> {{computer.gpu}}</p>
-
+                <p class="singleTitle"><mat-icon class="maticon">dvr</mat-icon><span class="tag-item">Sistema operativo:</span > Windows 10 Home</p>
+                <p class="singleTitle"><mat-icon class="maticon">memory</mat-icon><span class="tag-item">Processore:</span> {{computer.cpu}}</p>
+                <p class="singleTitle"><mat-icon class="maticon">present_to_all</mat-icon><span class="tag-item">Dimensione schermo:</span> 15.6"</p>
+                <p class="singleTitle"><mat-icon class="maticon">video_label</mat-icon><span class="tag-item">Risoluzione:</span> 1920x1080 pixel</p>
+                <p class="singleTitle"><mat-icon class="maticon">pages</mat-icon><span class="tag-item">Memoria ram:</span> {{computer.ram}}gb</p>
+                <p class="singleTitle"> <mat-icon class="maticon" >sd_card</mat-icon><span class="tag-item">Memoria interna:</span> {{computer.ssd}}gb</p>
+                <p class="singleTitle"><mat-icon class="maticon">widgets</mat-icon><span class="tag-item">Scheda video dedicata:</span> {{computer.gpu}}</p>
             </div>
         </div>
       </div>
-      <div class="flip-card-back">
+      <div *ngIf="cardFace == -1" class="flip-card-front">
+          <!-- Bombeer -->
         <div style ="justify-content: center;"class="leftSide">
             <div class="rankingContainer tooltip">
                 <span class="tooltiptext">
@@ -85,7 +86,6 @@
             <span>Guarda come dondolo guarda come dondolo</span>
             <button (click)="getPdf(computer.id)" class="button-spec centerAligned">Scheda tecnica</button>
         </div>
-      </div>
+      <!-- </div> -->
     </div>
   </div>
-</div>

@@ -2,13 +2,15 @@
     <img class="img animated" src="assets/search.svg">
     <div class="description">
         <p class="big-title animated">Che cosa vogliamo fare?</p>
+        <!-- <p class="mid-title animated">Intel i5,Ryzen 7, Ryzen i3 ... quanta confusione che create voi umani, è normale che certe volte vi sia difficoltà nel trovare il giusto compromesso.</p> -->
+
         <!-- <a routerLink="/scelta/:{{myControl.value}}"><button  [disabled]="!myControl.value" class="button-spec animated">Proseguiamo</button></a> -->
-    <div class="choices-container">
-        <button (click)="sceltaPc(1)"   class="button-choice animated">Esplora computer</button>
-        <button (click)="sceltaPc(2)"   class="button-choice animated">Analizza computer</button>
-        <button (click)="sceltaPc(3)"   class="button-choice animated">Confronta computer</button>
+        <div class="choices-container">
+            <button (click)="sceltaPc(1)"   class="button-choice animated">Esplora computer</button>
+            <button (click)="sceltaPc(2)"   class="button-choice animated">Analizza computer</button>
+            <button (click)="sceltaPc(3)"   class="button-choice animated">Confronta computer</button>
+        </div>
     </div>
-</div>
     <!-- <a routerLink="/scelta/:{{myControl.value}}"></a> -->
     <button (click)="switchRoute()" [hidden]="!sceltaComputer" class="button-spec animated">Proseguiamo</button>
 

@@ -10,6 +10,8 @@ import { ActivatedRoute,Router,NavigationStart } from '@angular/router';
 export class CardComponent implements OnInit {
   @Input('cmp')
   computer=new Computer(1,'Aspire XD14E','Acer',850,'Laptop',2,'Ryzen 7 4400U',16,'1000','Vega 10','Nvidia 1650ti','https://cdn.pocket-lint.com/r/s/1200x/assets/images/150582-laptops-review-acer-swift-3-2020-review-images-image1-fjjwkmhxey.jpg');
+  extendAction:any;
+  cardFace=1;
   constructor() {
   }
   ngOnInit(): void {
@@ -77,6 +79,17 @@ export class CardComponent implements OnInit {
     ['3070', 13],
     ['3080', 15],
   ]);
+
+
+  extendMouseEnter(action:any){
+    console.log(action);
+    this.extendAction=action;
+  }
+
+  extendMouseClick(){
+    this.cardFace = this.cardFace * -1;
+    console.log(this.cardFace);
+  }
 
   getValue(): number[] {
     let valore: number[] = new Array();

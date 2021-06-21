@@ -1,5 +1,9 @@
-<div class="filter">Office</div>
-
-<div *ngFor="let computer of computerList;index as i">
+<!-- <div class="filter">Office</div> -->
+    <div class="choices-container">
+        <button (click)="sceltaPc(1)"   class="button-choice animated">Esplora computer</button>
+        <button (click)="sceltaPc(2)"   class="button-choice animated">Analizza computer</button>
+        <button (click)="sceltaPc(3)"   class="button-choice animated">Confronta computer</button>
+    </div>
+<div  class="cardContainer" *ngFor="let computer of computerList;index as i">
     <app-card-component [cmp]="computerList[i]"></app-card-component>
 </div>

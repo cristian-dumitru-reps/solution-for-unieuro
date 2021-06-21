@@ -1,9 +1,9 @@
 .container{
     display: flex;
     // margin: auto;
-    // width: 50%;
+    width: 50%;
     flex-direction: row;
-    // align-self: center;
+    align-self: center;
     // height: 600px;
 }
 .pinco{
@@ -86,7 +86,7 @@
     100% {opacity:1;}
   }
   .example-form {
-    min-width: 150px;
+    min-width: 550px;
     max-width: 500px;
     max-height: 200px;
     width: 100%;

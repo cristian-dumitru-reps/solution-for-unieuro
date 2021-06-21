@@ -58,4 +58,9 @@ export class CompareComputersComponent implements OnInit {
     return this.options.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
   }
 
+  
+  compare(computer1:Computer,computer2:Computer){
+    console.log('Hai scelto di confrontare',computer1," e ",computer2);
+  }
+
 }
