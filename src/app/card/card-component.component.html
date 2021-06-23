@@ -1,8 +1,8 @@
 <div class="flip-card">
-    <div class="flip-card-inner animated">
+    <div class="flip-card-inner">
         <!-- <span class="flip-text">Statistiche</span> -->
-        <div (click)="extendMouseClick()" (mouseenter) ="extendMouseEnter('entro')" (mouseleave) ="extendMouseEnter('esco')" class="extend"><mat-icon class="extend-icon" >keyboard_arrow_right</mat-icon></div>
-      <div *ngIf="cardFace == 1" class="flip-card-front animated">
+        <div (click)="extendMouseClick()" class="extend"><mat-icon class="extend-icon" >keyboard_arrow_right</mat-icon></div>
+      <div *ngIf="cardFace == 1" class="flip-card-front">
         <div class="leftSide centerAligned">
             <span class="title">{{computer.model}} {{computer.name}} </span>
             <img [style.box-shadow]="computer.availabilty > 1 ? '0px 0px 15px #16FC1E':'0px 0px 15px #ff7b00'"[style.border]="computer.availabilty > 1 ? '1px solid #16FC1E':'1px solid #ff7b00'" class="image" [src]="computer.image">
@@ -29,17 +29,7 @@
       <div *ngIf="cardFace == -1" class="flip-card-front">
           <!-- Bombeer -->
         <div style ="justify-content: center;"class="leftSide">
-            <div class="rankingContainer tooltip">
-                <span class="tooltiptext">
-                    <span style="margin-left:4px;font-weight: 600;">Esempi di uttilizzo</span><br>
-                    <div class="tags">
-                        <span class="circle-tag centerAligned"></span>Navigazione Web
-                        <span class="circle-tag centerAligned"></span>YouTube
-                        <span class="circle-tag centerAligned"></span>Email
-                        <span class="circle-tag centerAligned"></span>Netflix
-
-                    </div>
-                </span>
+            <div (mouseenter) ="extendMouseEnter('entroNormale')" (mouseleave) ="extendMouseEnter('escoNormale')" class="rankingContainer">
                 <p class="rankingTitle">Uso normale</p>
                 <div class="rankingLine">
                     <div [style.width.px]="getPercentagePixel(getValue()[0],6,'normal')" [ngStyle]="{'background-image': getGradient(getPercentagePixel(getValue()[0],6,'normal'))}" class="rankingLineInside">
@@ -47,16 +37,7 @@
                     </div>
                 </div>
             </div>
-            <div class="rankingContainer tooltip">
-                <span class="tooltiptext">
-                    <span style="margin-left:4px;font-weight: 600;">Esempi di uttilizzo</span><br>
-                    <div class="tags">
-                        <span class="circle-tag centerAligned"></span>Photoshop
-                        <span class="circle-tag centerAligned"></span>Illustrator
-                        <span class="circle-tag centerAligned"></span>Software musicali
-
-                    </div>
-                </span>
+            <div (mouseenter) ="extendMouseEnter('entroMedio')" (mouseleave) ="extendMouseEnter('escoMedio')" class="rankingContainer">
                 <p class="rankingTitle">Uso scolastico/ufficio </p>
                 <div class="rankingLine">
                     <div [style.width.px]="getPercentagePixel(getValue()[0],13,'medium')" [ngStyle]="{'background-image': getGradient(getPercentagePixel(getValue()[0],13,'medium'))}" class="rankingLineInside">
@@ -64,16 +45,7 @@
                     </div>
                 </div>
             </div>
-            <div class="rankingContainer tooltip">
-                <span class="tooltiptext">
-                    <span style="margin-left:4px;font-weight: 600;">Esempi di uttilizzo</span><br>
-                    <div class="tags">
-                        <span class="circle-tag centerAligned"></span>Grafica 3D
-                        <span class="circle-tag centerAligned"></span>Gaming
-                        <span class="circle-tag centerAligned"></span>Video editing
-
-                    </div>
-                </span>
+            <div (mouseenter) ="extendMouseEnter('entroAvanzato')" (mouseleave) ="extendMouseEnter('escoAvanzato')" class="rankingContainer ">
                 <p class="rankingTitle">Uso grafica avanzata</p>
                 <div class="rankingLine">
                     <div [style.width.px]="getPercentagePixel(getValue()[0],17,'high',getValue()[1])" [ngStyle]="{'background-image': getGradient(getPercentagePixel(getValue()[0],17,'high',getValue()[1]))}" class="rankingLineInside">
@@ -83,8 +55,35 @@
             </div>
         </div>
         <div class="rightSide">
-            <span>Guarda come dondolo guarda come dondolo</span>
-            <button (click)="getPdf(computer.id)" class="button-spec centerAligned">Scheda tecnica</button>
+            <div *ngIf="typeOfUse == 'No type'">Come va questo pc?
+                <div class="tags">
+                    <span class="circle-tag centerAligned"></span>Grafica 3D
+                    <span class="circle-tag centerAligned"></span>Gaming
+                    <span class="circle-tag centerAligned"></span>Video editing
+                </div>
+            </div>
+            <div *ngIf="typeOfUse == 'entroNormale'">Che cosa significa "Normale"?
+                <div class="tags">
+                    <span class="circle-tag centerAligned"></span>Grafica 3D
+                    <span class="circle-tag centerAligned"></span>Gaming
+                    <span class="circle-tag centerAligned"></span>Video editing
+                </div>
+            </div>
+            <div *ngIf="typeOfUse == 'entroMedio'">Che cosa significa "Medio"?
+                <div class="tags">
+                    <span class="circle-tag centerAligned"></span>Grafica 3D
+                    <span class="circle-tag centerAligned"></span>Gaming
+                    <span class="circle-tag centerAligned"></span>Video editing
+                </div>
+            </div>
+            <div *ngIf="typeOfUse == 'entroAvanzato'">Che cosa significa "Avanzato"?
+                <div class="tags">
+                    <span class="circle-tag centerAligned"></span>Grafica 3D
+                    <span class="circle-tag centerAligned"></span>Gaming
+                    <span class="circle-tag centerAligned"></span>Video editing
+                </div>
+            </div>
+            <button (click)="getPdf(computer.id)" class="button-spec centerAligned fixed">Scheda tecnica</button>
         </div>
       <!-- </div> -->
     </div>
