@@ -1,6 +1,5 @@
 <div class="flip-card">
     <div class="flip-card-inner">
-        <!-- <span class="flip-text">Statistiche</span> -->
         <div (click)="extendMouseClick()" class="extend"><mat-icon class="extend-icon" >keyboard_arrow_right</mat-icon></div>
       <div *ngIf="cardFace == 1" class="flip-card-front">
         <div class="leftSide centerAligned">
@@ -27,7 +26,6 @@
         </div>
       </div>
       <div *ngIf="cardFace == -1" class="flip-card-front">
-          <!-- Bombeer -->
         <div style ="justify-content: center;"class="leftSide">
             <div (mouseenter) ="extendMouseEnter('entroNormale')" (mouseleave) ="extendMouseEnter('escoNormale')" class="rankingContainer">
                 <p class="rankingTitle">Uso normale</p>
@@ -55,28 +53,61 @@
             </div>
         </div>
         <div class="rightSide">
-            <div *ngIf="typeOfUse == 'No type'">Come va questo pc?
+            <div *ngIf="typeOfUse == 'No type'">
+                <div class="use-title">Utilizzo di questo computer</div>
+                <p class="parag-use">{{typeOfAdvice}}.
+                </p>
                 <div class="tags">
                     <span class="circle-tag centerAligned"></span>Grafica 3D
                     <span class="circle-tag centerAligned"></span>Gaming
                     <span class="circle-tag centerAligned"></span>Video editing
                 </div>
             </div>
-            <div *ngIf="typeOfUse == 'entroNormale'">Che cosa significa "Normale"?
+            <div *ngIf="typeOfUse == 'entroNormale'" >
+                <div class="use-title">Utilizzo normale</div>
+                <p class="parag-use"> Un computer appartenente a questa categoria può essere utilizzato per svolgere quelle che sono delle funzioni basiche e non troppo impegnative.
+                </p>
+                <p class="parag-use">Esempio di uttilizzo:
+                </p>
+                <div class="tags">
+                    <span class="circle-tag centerAligned"></span>Google
+                    <span class="circle-tag centerAligned"></span>Office
+                    <span class="circle-tag centerAligned"></span>Youtube
+                </div>
+                <div class="tags">
+                    <span class="circle-tag centerAligned"></span>Netflix
+                    <span class="circle-tag centerAligned"></span>Email
+                    <span class="circle-tag centerAligned"></span>Navigazione
+                </div>
+            </div>
+            <div *ngIf="typeOfUse == 'entroMedio'">
+                <div class="use-title">Utilizzo scolastico/ufficio</div>
+                <p class="parag-use"> Un computer appartenente a questa categoria può essere utilizzato per svolgere attività leggermente più complesse e avanzate, le quali richiedono più potenza di calcolo.
+                </p>
+                <p class="parag-use">Esempio di utilizzo:
+                </p>
+                <div class="tags">
+                    <span class="circle-tag centerAligned"></span>Grafica 2d
+                    <span class="circle-tag centerAligned"></span>Autocad
+                    <span class="circle-tag centerAligned"></span>Illustrator
+                </div>
+                <div class="tags">
+                    <span class="circle-tag centerAligned"></span>Disegno
+                    <span class="circle-tag centerAligned"></span>Musica
+                    <span class="circle-tag centerAligned"></span>Programmazione
+                </div>
+            </div>
+            <div *ngIf="typeOfUse == 'entroAvanzato'">
+                <div class="use-title">Utilizzo avanzato</div>
+                <p class="parag-use"> Un computer appartenente a questa categoria può essere utilizzato per svolgere attività pesanti che richiedono una grandissima potenza di calcolo.
+                </p>
+                <p class="parag-use">Esempio di utilizzo:
+                </p>
                 <div class="tags">
                     <span class="circle-tag centerAligned"></span>Grafica 3D
                     <span class="circle-tag centerAligned"></span>Gaming
                     <span class="circle-tag centerAligned"></span>Video editing
                 </div>
-            </div>
-            <div *ngIf="typeOfUse == 'entroMedio'">Che cosa significa "Medio"?
-                <div class="tags">
-                    <span class="circle-tag centerAligned"></span>Grafica 3D
-                    <span class="circle-tag centerAligned"></span>Gaming
-                    <span class="circle-tag centerAligned"></span>Video editing
-                </div>
-            </div>
-            <div *ngIf="typeOfUse == 'entroAvanzato'">Che cosa significa "Avanzato"?
                 <div class="tags">
                     <span class="circle-tag centerAligned"></span>Grafica 3D
                     <span class="circle-tag centerAligned"></span>Gaming
@@ -85,6 +116,5 @@
             </div>
             <button (click)="getPdf(computer.id)" class="button-spec centerAligned fixed">Scheda tecnica</button>
         </div>
-      <!-- </div> -->
     </div>
   </div>

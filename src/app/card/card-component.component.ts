@@ -13,7 +13,7 @@ export class CardComponent implements OnInit {
   extendAction:any;
   cardFace=1;
   typeOfUse='No type';
-
+  typeOfAdvice='I do not know mate';
   constructor() {
   }
   ngOnInit(): void {
@@ -82,6 +82,20 @@ export class CardComponent implements OnInit {
     ['3080', 15],
   ]);
 
+
+  getUsage(value:any){
+    // console.log('Valutazione:',value[0]);
+    if(value[0] <= 10){
+      return 'Computer fa cagare zio';
+    }
+    else if(value[0] > 10 && value[0] < 20){
+      return 'Computer medio zio';
+
+    }
+    else{
+      return 'Computer figo zio';
+    }
+  }
 
   extendMouseEnter(action:string){
     console.log(action);
